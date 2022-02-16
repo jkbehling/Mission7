@@ -1,0 +1,38 @@
+﻿@{
+}
+@model BooksViewModel
+
+<h1>Welcome to the Bookstore!</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Isbn</th>
+            <th>Classification</th>
+            <th>PageCount</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Book b in Model.Books)
+        {
+        <tr>
+            <td>@b.Title</td>
+            <td>@b.Author</td>
+            <td>@b.Publisher</td>
+            <td>@b.Isbn</td>
+            <td>@b.Classification</td>
+            <td>@b.PageCount</td>
+            <td>@b.Price</td>
+        </tr>
+            
+        }
+    </tbody>
+    
+</table>
+
+
+<div page-numbers="@Model.PageInfo" page-action="Index" page-class="btn"></div>
